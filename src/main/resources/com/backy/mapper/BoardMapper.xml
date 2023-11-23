@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backy.mapper.BoardMapper">
+  <select id="getAll" resultType="com.backy.domain.MemberVO">
+   	select * from ezen
+  </select>
+  <select id="getOne" resultType="com.backy.domain.MemberVO">
+   	select * from ezen where email = #{email}
+  </select>
+  <update id="update">
+  	update ezen set name = #{name}, phone = #{phone}, age = #{age}, address = #{address} where email = #{email}
+  </update>
+  <insert id="insert">
+  	insert into ezen values(#{name}, #{phone}, #{address}, #{age}, #{email} )
+  </insert>
+  <delete id="delete">
+  	delete from ezen where email = #{email}
+  </delete>
+</mapper>

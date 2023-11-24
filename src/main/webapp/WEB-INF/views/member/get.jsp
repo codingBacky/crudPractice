@@ -52,7 +52,8 @@
 
 				<form action="/member/modify" method="get" id="operForm">
 					<input type="hidden" id="email" name="email" value="${member.email}">
-					
+					<input type="hidden" name="pageNum" value="${cri.pageNum}">
+					<input type="hidden" name="amount" value="${cri.amount}">
 				</form>
 
 

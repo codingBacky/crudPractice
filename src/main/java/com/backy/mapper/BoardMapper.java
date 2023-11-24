@@ -2,6 +2,7 @@ package com.backy.mapper;
 
 import java.util.List;
 
+import com.backy.domain.Criteria;
 import com.backy.domain.MemberVO;
 
 public interface BoardMapper {
@@ -14,4 +15,8 @@ public interface BoardMapper {
 	public int insert(MemberVO vo);
 	
 	public int delete(String email);
+
+	public List<MemberVO> getListWithPaging(Criteria cri);
+	
+	public int getTotalCount();
 }

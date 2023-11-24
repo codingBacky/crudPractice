@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.backy.domain.Criteria;
 import com.backy.domain.MemberVO;
 import com.backy.mapper.BoardMapper;
 
@@ -16,6 +17,12 @@ import lombok.extern.log4j.Log4j;
 public class BoardServiceImpl implements BoardService{
 
 	private final BoardMapper mapper;
+	
+	@Override
+	public List<MemberVO> getListWithPaging(Criteria cri) {
+		log.info("getListWithPaging 실행완료");
+		return mapper.getListWithPaging(cri);
+	}
 	
 	@Override
 	public List<MemberVO> getAll() {
@@ -45,6 +52,12 @@ public class BoardServiceImpl implements BoardService{
 	public int delete(String email) {
 		log.info("delete 실행완료");
 		return mapper.delete(email);
+	}
+
+	@Override
+	public int total() {
+		log.info("totalCount 실행완료");
+		return mapper.getTotalCount();
 	}
 	
 }

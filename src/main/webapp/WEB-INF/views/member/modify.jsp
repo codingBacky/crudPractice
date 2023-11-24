@@ -5,8 +5,8 @@
 <html lang="ko">
 
 <head>
-
-<meta charset="utf-8">
+ <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+ <meta charset="utf-8">
 
 </head>
 
@@ -23,7 +23,7 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">Board Modify</div>
+			<div class="panel-heading">Member Modify</div>
 			<div class="panel-body">
 				<form action="/member/modify" method="post" role="form">
 					<div class="form-group">
@@ -81,7 +81,8 @@
 			console.log(operation);
 			
 			if(operation === "remove"){
-				formObj.attr("action","/member/remove")
+				formObj.attr("action","/member/remove");
+ 				 $("form input[name!='email']").remove();
 			}else if(operation === "list"){
 				//self.location = "/board/list";//get방식으로 날라간다~~
 				formObj.attr("action","/member/list").attr("method","get");
